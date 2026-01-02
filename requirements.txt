@@ -1,0 +1,33 @@
+# Smart Fitness Bot - Unified Requirements
+# Python 3.9+
+
+# Telegram Bot Framework
+aiogram>=3.4.0
+
+# OpenAI API (for injury assessment and training generation)
+openai>=1.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Database (SQLAlchemy async)
+sqlalchemy[asyncio]>=2.0.0
+aiosqlite>=0.19.0
+asyncpg>=0.29.0
+psycopg2-binary>=2.9.9
+
+# Image processing
+numpy<2
+Pillow>=10.0.0
+
+# HTTP client
+aiohttp>=3.9.1
+
+# Google Gemini AI (for food recognition)
+google-generativeai>=0.3.0
+
+# PyTorch (CPU version for deployment optimization)
+# For GPU support, use: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu

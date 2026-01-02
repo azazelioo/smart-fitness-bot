@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: smart_fitness_bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DATABASE_URL=${DATABASE_URL}
+    volumes:
+      - ./data:/app/data
+    networks:
+      - bot_network
+
+networks:
+  bot_network:
+    driver: bridge
