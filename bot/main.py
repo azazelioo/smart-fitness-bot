@@ -59,12 +59,12 @@ async def on_startup(bot: Bot):
     
     # Set webhook for Render deployment
     render_url = os.getenv("RENDER_EXTERNAL_URL", "")
-    
+    #     
     if render_url:
-        webhook_url = f"{render_url}{WEBHOOK_PATH}"
-        await bot.set_webhook(webhook_url, drop_pending_updates=True)
-        logger.info(f"✅ Webhook set: {webhook_url}")
-    else:
+    #         webhook_url = f"{render_url}{WEBHOOK_PATH}"
+    #         await bot.set_webhook(webhook_url, drop_pending_updates=True)
+    #         logger.info(f"✅ Webhook set: {webhook_url}")
+    #     else:
         logger.warning("⚠️  RENDER_EXTERNAL_URL not set, webhook not configured")
         logger.info("Starting in polling mode for local development")
 
