@@ -24,7 +24,6 @@ Pillow>=10.0.0
 aiohttp>=3.9.1
 
 # Google Gemini AI (for food recognition)
-google-generativeai>=0.3.0
 
 # PyTorch (CPU version for deployment optimization)
 # For GPU support, use: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
