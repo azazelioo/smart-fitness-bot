@@ -11,7 +11,7 @@ import sys
 sys.path.insert(0, str(__file__).replace('\\', '/').rsplit('/bot/', 1)[0])
 
 from database import async_session, crud
-from modules.food_analyzer import FoodRecognizer, get_food_info
+from modules.food_analyzer import FoodRecognizer, get_food_info, recognize_food_image
 from bot.keyboards.menus import (
     get_main_menu,
     get_nutrition_menu,
