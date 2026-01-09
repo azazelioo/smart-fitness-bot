@@ -1,6 +1,5 @@
 """
 Smart Fitness Bot - Unified Version
-Combines injury assessment, food recognition, training, and KBJU calculator
 """
 import asyncio
 import logging
@@ -29,8 +28,6 @@ from bot.handlers import (
     training_router,
     nutrition_router,
     profile_router,
-    assessment_router,
-    advice_router
 )
 
 
@@ -101,8 +98,6 @@ async def main():
     dp.include_router(profile_router)
     
     # Additional handlers from smart-fit-bot
-    dp.include_router(assessment_router)
-    dp.include_router(advice_router)
     
     logger.info("   ✅ All handlers registered successfully")
     
@@ -116,7 +111,6 @@ async def main():
     logger.info("=" * 60)
     logger.info("Features:")
     logger.info("   ✅ 🍽 Food Recognition (AI-powered)")
-    logger.info("   ✅ 🤕 Injury Assessment")
     logger.info("   ✅ 💪 Training Generation")
     logger.info("   ✅ 📊 KBJU Calculator")
     logger.info(f"   📍 Port: {WEBAPP_PORT}")
