@@ -81,7 +81,7 @@ async def health_check(request):
     return web.Response(text="OK", status=200)
 
 
-def main():
+async def main():
     """Main function to run the bot"""
     
     # Check for bot token
@@ -146,12 +146,12 @@ def main():
     setup_application(app, dp, bot=bot)
     
     # Run server
-    web.run_app(app, host=WEBAPP_HOST, port=WEBAPP_PORT)
+    await dp.start_polling(bot, skip_updates=True)
 
 
 if __name__ == "__main__":
     try:
-        main()
+        asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("🛑 Received stop signal")
     except Exception as e:
