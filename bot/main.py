@@ -57,15 +57,6 @@ async def on_startup(bot: Bot):
     except Exception as e:
         logger.error(f"❌ Database initialization error: {e}")
     
-    # Set webhook for Render deployment
-    render_url = os.getenv("RENDER_EXTERNAL_URL", "")
-    #     
-    if render_url:
-    #         webhook_url = f"{render_url}{WEBHOOK_PATH}"
-    #         await bot.set_webhook(webhook_url, drop_pending_updates=True)
-    #         logger.info(f"✅ Webhook set: {webhook_url}")
-    #     else:
-        logger.warning("⚠️  RENDER_EXTERNAL_URL not set, webhook not configured")
         logger.info("Starting in polling mode for local development")
 
 
@@ -77,7 +68,7 @@ async def on_shutdown(bot: Bot):
 
 
 async def health_check(request):
-    """Health check endpoint for Render"""
+    """Health check endpoint"""
     return web.Response(text="OK", status=200)
 
 
